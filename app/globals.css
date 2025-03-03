@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-open: var(--font-open-sans);
+  --font-nunito: var(--font-nunito);
+
+  --color-primary: #E65C00;
+  --color-body: #4C4C4C;
+  --color-stroke: #B2B2B2;
+  --color-less-stroke: #E5E5E5;
+  --color-placeholder: #999999;
+  --color-less-important: #7F7F7F;
+  --color-success: #4CAF50;
+}
+
+:root {}
+
+body {}
+
+@media (prefers-color-scheme: dark) {
+  :root {}
+}
+
+body {}
+
+p {
+  line-height: 2;
+  font-size: 18px;
+}
