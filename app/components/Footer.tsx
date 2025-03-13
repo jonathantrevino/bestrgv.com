@@ -24,8 +24,8 @@ const Footer = () => {
           <div className='space-y-4'>
             <h4 className='!text-lg'>Cities</h4>
             <span className='flex flex-col gap-2 !text-sm text-body'>
-              <Link href='/discover?category=edinburg' className='w-fit'>Edinburg</Link>
-              <Link href='/discover?category=mcallen' className='w-fit'>McAllen</Link>
+              <Link href='/discover/city/edinburg' className='w-fit'>Edinburg</Link>
+              <Link href='/discover/city/mcallen' className='w-fit'>McAllen</Link>
             </span>
           </div>
           <div className='space-y-4'>

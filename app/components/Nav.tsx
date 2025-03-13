@@ -7,7 +7,7 @@ import SubmitRecCta from '../sections/SubmitRecCta'
 
 const DropdownContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='absolute bg-white border border-less-stroke right-0 rounded-md shadow-md px-6 py-4 space-y-2 w-max'>{children}</div>
+    <div className='absolute bg-white border border-less-stroke right-0 rounded-md shadow-md px-6 py-4 space-y-2 w-max z-50'>{children}</div>
   )
 }
 
@@ -75,7 +75,7 @@ const Nav = () => {
           <Link href='/about-us'>About Us</Link>
         </div>
       </div>
-      <div className='flex gap-6 items-center'>
+      <div className='flex gap-6 lg:gap-0 items-center'>
         <Link href='/submit-recommendation' className='bg-primary px-3 py-2 rounded-md text-white sm:block hidden'>Submit Recommendation</Link>
         <div ref={hambugerRef} className='relative'>
           <button className='lg:hidden block cursor-pointer' onClick={() => setOpen(!open)}><Menu /></button>

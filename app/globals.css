@@ -11,6 +11,7 @@
   --color-placeholder: #999999;
   --color-less-important: #7F7F7F;
   --color-success: #4CAF50;
+  --color-fail: #D32F2F;
 }
 
 :root {}
