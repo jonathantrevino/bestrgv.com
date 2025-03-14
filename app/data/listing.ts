@@ -14,7 +14,7 @@ export async function fetchListing(category: string, city: string, slug: string)
 
 }
 
-export const fetchListings = async (category: string | null, city: string | null) => {
+export const fetchListings = async (category: string | null, city: string | null, page: number) => {
   // Start with the base URL
   let url = `${BASE_URL}/api/getListings`;
 
@@ -29,6 +29,9 @@ export const fetchListings = async (category: string | null, city: string | null
   if (city) {
     queryParams.push(`city=${city}`);
   }
+
+  queryParams.push(`page=${page}`);
+
 
   // If there are query params, append them to the URL
   if (queryParams.length > 0) {

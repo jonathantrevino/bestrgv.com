@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import HeroCta from '../components/HeroCta'
 import { Coffee, Utensils } from 'lucide-react'
-import CategoryBtn from '../components/CategoryBtn'
+import { CategoryBtn } from '../components/CategoryBtn'
 
 const Hero = () => {
   return (
@@ -18,8 +18,8 @@ const Hero = () => {
         <p className='text-less-important text-sm'>
           or by these categories
         </p>
-        <div className='flex gap-6'>
-          <CategoryBtn text="Restaraunts" icon={<Utensils />} redirect_link={'/restaraunts'} />
+        <div className='flex gap-6 flex-wrap'>
+          {/*<CategoryBtn text="Restaraunts" icon={<Utensils />} redirect_link={'/restaraunts'} />*/}
           <CategoryBtn text="Coffee Shops" icon={<Coffee />} redirect_link={'/coffee-shops'} />
         </div>
       </div>

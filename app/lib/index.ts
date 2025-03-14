@@ -11,6 +11,7 @@ export function slugify(str: string) {
 export function unslugify(str: string): string {
   return str
     .replace(/-/g, ' ')            // Replace underscores with spaces
+    .replace(/_/g, ' ')            // Replace underscores with spaces
     .replace(/\b\w/g, (char) => char.toUpperCase()) // Capitalize the first letter of each word
 }
 

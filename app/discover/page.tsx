@@ -1,18 +1,17 @@
-import React, { cache } from 'react'
+import React from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import ListingPreview from '../components/listing/ListingPreview'
 import Filters from '../components/Filters'
-import { fetchListings } from '../data/listing'
-
-const getListing = cache(fetchListings);
-const DEFAULT_CATEGORY = 'coffee_shops'
 
 
+export async function generateMetadata() {
+  return {
+    title: 'Explore the Best Businesses in RGV | BestRGV',
+    description: 'Find top-rated businesses, restaurants, and services across the Rio Grande Valley. Browse by category and city.'
+  }
+}
 
 const page = async () => {
-
-
   return (
     <div>
       <Nav />
@@ -21,7 +20,6 @@ const page = async () => {
           <h1 className='text-xl font-nunito text-[28px]  md:text-[43px] leading-none font-semibold'>Discover Your Next Favorite Place</h1>
           <p className='text-body'>Select a category or city below to start your search for listings of places in the <span className='font-medium'>Rio Grande Valley</span>.</p>
         </div>
-
         <div className='relative -top-12'>
           <Filters totalPages={null} />
         </div>

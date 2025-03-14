@@ -26,7 +26,11 @@ const HeroCta = () => {
 
     // Add "where" if it's set
     if (where) {
-      path += `/${slugify(where)}`;
+      if (!what) {
+        path += `/city/${slugify(where)}`;
+      } else {
+        path += `/${slugify(where)}`
+      }
     }
 
     // Navigate to the constructed path

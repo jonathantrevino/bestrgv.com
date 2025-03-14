@@ -3,7 +3,7 @@ import Nav from '@/app/components/Nav'
 import { fetchListing } from '@/app/data/listing';
 import { BASE_URL } from '@/app/sitemap';
 import { Ban, Check, ChevronRight, Flag, Navigation, Pin, Share, Star } from 'lucide-react';
-import { slugify } from '@/app/lib';
+import { slugify, unslugify } from '@/app/lib';
 import { GetServerSideProps, Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,6 +11,12 @@ import React, { cache } from 'react'
 import LocationMap from '@/app/components/LocationMap';
 
 const getListing = cache(fetchListing);
+
+interface Listing {
+  category: string;
+  city: string;
+  slug: string;
+}
 
 interface ListingProps {
   params: Promise<{
@@ -20,10 +26,36 @@ interface ListingProps {
   }>
 }
 
+export async function generateStaticParams() {
+  const response = await fetch(`${BASE_URL}/api/getAllListings`);
+  const { allListings }: { allListings: Listing[] } = await response.json();
+  return allListings.map((listing) => (
+    {
+      params: { slug: listing.slug, category: listing.category, city: listing.city }
+    }
+  ))
+
+}
+
 export async function generateMetadata({ params }: ListingProps): Promise<Metadata> {
   const { category, city, slug } = await params
+
+  const { listing: results, additionalListings: additionalResults } = await getListing(category, city, slug)
+
+  // get 3 features from middle
+  let features = JSON.parse(results.features)
+
+  if (features.length > 3) {
+
+    const midIndex = Math.floor(features.length / 3) - Math.floor(3 / 2);
+    features = features.slice(midIndex, midIndex + 3);
+
+  }
+
+  console.log(features)
   return {
-    title: `${slug} - ${category} - ${city} `
+    title: `${unslugify(slug)} - Best ${unslugify(category)} in ${unslugify(city)} | BestRGV`,
+    description: `Looking for the best ${unslugify(category)} in ${unslugify(city)}? Visit ${unslugify(slug)} for ${results.features} Located at [Address], it's a must-visit spot for locals and visitors alike!`
   }
 
 }

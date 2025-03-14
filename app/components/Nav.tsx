@@ -58,7 +58,7 @@ const Nav = () => {
     <nav className='px-5 sm:px-10 py-3 flex justify-between items-center'>
       <div className='flex gap-6 items-center'>
         <Link href='/'>
-          <Image src='/wordmark.svg' width='100' height='18' alt='wordmark bestrgv logo' />
+          <Image src='/wordmark.svg' width='100' height='18' alt='wordmark bestrgv logo' draggable={false} />
         </Link>
         <div className='lg:flex hidden gap-5 text-xl leading-[150%] font-open'>
           <Link href='/discover'>Discover</Link>
@@ -66,13 +66,13 @@ const Nav = () => {
             <Link href='/top-picks' className='flex gap-1 items-center'>Top Picks <ChevronDown /></Link>
             <div className='group-hover:block hidden'>
               <DropdownContainer>
-                <Link href='/top-picks/restaraunts' className='flex gap-1 items-center'>Restaraunts</Link>
+                {/*<Link href='/top-picks/restaraunts' className='flex gap-1 items-center'>Restaraunts</Link>*/}
                 <Link href='/top-picks/coffee-shops' className='flex gap-1 items-center'>Coffee Shops</Link>
               </DropdownContainer>
             </div>
           </div>
           <Link href='/blog'>Blog</Link>
-          <Link href='/about-us'>About Us</Link>
+          {/*<Link href='/about-us'>About Us</Link>*/}
         </div>
       </div>
       <div className='flex gap-6 lg:gap-0 items-center'>

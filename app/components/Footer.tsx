@@ -18,7 +18,7 @@ const Footer = () => {
           <div className='space-y-4'>
             <h4 className='!text-lg'>Categories</h4>
             <span className='flex flex-col gap-2 !text-sm text-body'>
-              <Link href='/restaraunts' className='w-fit'>Restaraunts</Link>
+              <Link href='/discover/coffee-shops' className='w-fit'>Coffee Shops</Link>
             </span>
           </div>
           <div className='space-y-4'>
@@ -26,12 +26,15 @@ const Footer = () => {
             <span className='flex flex-col gap-2 !text-sm text-body'>
               <Link href='/discover/city/edinburg' className='w-fit'>Edinburg</Link>
               <Link href='/discover/city/mcallen' className='w-fit'>McAllen</Link>
+              <Link href='/discover/city/mcallen' className='w-fit'>Pharr</Link>
+              <Link href='/discover/city/mcallen' className='w-fit'>Mission</Link>
+              <Link href='/discover/city/mcallen' className='w-fit'>San Juan</Link>
             </span>
           </div>
           <div className='space-y-4'>
             <h4 className='!text-lg'>Contribute</h4>
             <span className='flex flex-col gap-2 !text-sm text-body'>
-              <Link href='/add-business' className='!text-success w-fit'>Add Your Business</Link>
+              {/*<Link href='/add-business' className='!text-success w-fit'>Add Your Business</Link>*/}
               <Link href='/submit-recommendation' className='w-fit'>Submit a Recommendation</Link>
             </span>
           </div>
