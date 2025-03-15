@@ -22,7 +22,7 @@ export const CityDetailed = ({ title, description, image_url, alt }: { title: st
       <div className='flex-[0.4] w-full aspect-square relative'>
         <Image src={image_url} className='object-cover' fill alt={alt} />
       </div>
-      <div className='flex-[0.6] w-full flex flex-col justify-between items-end pb-1'>
+      <div className='flex-[0.6] w-full flex flex-col items-end pb-1'>
         <div>
           <h3 className='text-[24px] font-nunito'>{title}</h3>
           <p className='text-body'>{description}</p>

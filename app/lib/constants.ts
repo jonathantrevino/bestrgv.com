@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 export const CITIES = ['McAllen', 'Edinburg', 'Pharr', 'Mission', 'San Juan']
 
-export type City = 'Mcallen' | 'Edinburg';
+export type City = 'Mcallen' | 'Edinburg' | 'Pharr' | 'Mission' | 'San Juan';
 
 export const CITY_DATA: Record<City, { title: string, description: string, image_url: string, alt: string, redirect_url: string, categories: { name: string, description: string, redirect_url: string, icon: any }[] }> = {
   'Mcallen': {
@@ -33,6 +33,54 @@ export const CITY_DATA: Record<City, { title: string, description: string, image
         name: 'Coffee Shops',
         description: 'Discover Edinburg’s best coffee shops, perfect for studying, socializing, or just a great cup of coffee.',
         redirect_url: '/discover/city/edinburg/coffee-shops',
+        icon: Coffee
+      }
+    ]
+  },
+
+  'Pharr': {
+    title: 'Pharr',
+    description: "Pharr, Texas, is a gateway to international trade and a vibrant city in the Rio Grande Valley. Known for its rich cultural heritage, diverse dining options, and access to outdoor activities, Pharr is a great place to explore.",
+    image_url: '/pharr_building_daytime.webp',
+    alt: 'A scenic view of Pharr, Texas',
+    redirect_url: '/discover/city/pharr',
+    categories: [
+      {
+        name: 'Coffee Shops',
+        description: 'Explore the top coffee shops in Pharr, from hidden gems to well-known favorites.',
+        redirect_url: '/discover/coffee-shops/pharr',
+        icon: Coffee
+      }
+    ]
+  },
+
+  'Mission': {
+    title: 'Mission',
+    description: "Mission, Texas, is a city known for its citrus industry, historic sites, and outdoor recreation. Home to the National Butterfly Center and the World Birding Center, it's an ideal destination for nature lovers and adventurers.",
+    image_url: '/mission_texas_city_daytime.webp',
+    alt: 'A nature-filled view of Mission, Texas',
+    redirect_url: '/discover/city/mission',
+    categories: [
+      {
+        name: 'Coffee Shops',
+        description: 'Find the best coffee shops in Mission for a perfect brew and cozy atmosphere.',
+        redirect_url: '/discover/coffee-shops/mission',
+        icon: Coffee
+      }
+    ]
+  },
+
+  'San Juan': {
+    title: 'San Juan',
+    description: "San Juan, Texas, is best known for the historic Basilica of Our Lady of San Juan del Valle, a major pilgrimage site. With a strong sense of community and a growing dining scene, it’s a city rich in tradition and local charm.",
+    image_url: '/san_juan_city_daytime.webp',
+    alt: 'A view of the Basilica in San Juan, Texas',
+    redirect_url: '/discover/city/san-juan',
+    categories: [
+      {
+        name: 'Coffee Shops',
+        description: 'Discover cozy coffee shops in San Juan, ideal for a relaxing cup of coffee.',
+        redirect_url: '/discover/coffee-shops/san-juan',
         icon: Coffee
       }
     ]

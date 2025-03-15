@@ -16,8 +16,8 @@ export default function Home() {
         <Hero />
         <FindWhatYouNeed />
         <ListingPreviews heading={'Explore by City'} redirect_link={'/cities'} >
-          <div className='grid grid-cols-4 gap-5'>
-            {Object.entries(CITY_DATA).map(([city_key, city_data], index) =>
+          <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-5'>
+            {Object.entries(CITY_DATA).slice(0, 4).map(([city_key, city_data], index) =>
               <CityPreview key={index} title={city_data.title} image_url={city_data.image_url} alt={city_data.alt} redirect_url={city_data.redirect_url} />
             )}
           </div>
