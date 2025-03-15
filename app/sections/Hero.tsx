@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
         <div className='flex gap-6 flex-wrap'>
           {/*<CategoryBtn text="Restaraunts" icon={<Utensils />} redirect_link={'/restaraunts'} />*/}
-          <CategoryBtn text="Coffee Shops" icon={<Coffee />} redirect_link={'/coffee-shops'} />
+          <CategoryBtn text="Coffee Shops" icon={<Coffee />} redirect_link={'/discover/coffee-shops'} />
         </div>
       </div>
     </div>
